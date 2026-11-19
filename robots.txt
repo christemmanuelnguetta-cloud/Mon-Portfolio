@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christemmanuelnguetta-cloud.github.io/Mon-Portfolio/sitemap.xml
+Sitemap: https://mon-portfolio-xi-five.vercel.app/sitemap.xml
