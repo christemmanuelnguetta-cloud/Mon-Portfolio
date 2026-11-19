@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://christemmanuelnguetta-cloud.github.io/</loc>
+    <loc>https://christemmanuelnguetta-cloud.github.io/Mon-Portfolio/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://christemmanuelnguetta-cloud.github.io/cv.html</loc>
+    <loc>https://christemmanuelnguetta-cloud.github.io/Mon-Portfolio/cv.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
