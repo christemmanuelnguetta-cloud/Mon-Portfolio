@@ -1,0 +1,74 @@
+/* =========================================================
+   base.css : variables, réglages généraux, titres
+   ========================================================= */
+
+:root {
+  --principal: #0ea5e9;
+  --principal-fonce: #0369a1;
+  --accent: #22d3ee;
+  --texte-titre: #0f172a;
+  --bordure: #e2e8f0;
+  --fond-carte: #ffffff;
+  --texte-doux: #475569;
+}
+
+/* Mode sombre : on change seulement les variables */
+.dark {
+  --texte-titre: #ffffff;
+  --bordure: #1e293b;
+  --fond-carte: #0f172a;
+  --texte-doux: #94a3b8;
+}
+
+* { box-sizing: border-box; }               /* la largeur inclut padding et bordure */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { margin: 0; overflow-x: hidden; }
+section { scroll-margin-top: 64px; }        /* les ancres ne passent pas sous le header */
+
+/* ---------- Titres de section ---------- */
+.sur-titre {
+  color: var(--principal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: .85rem;
+}
+
+.titre-section {
+  margin-top: .5rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--texte-titre);
+}
+
+.titre-section::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 1rem auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--principal), var(--accent));
+}
+
+.titre-bloc {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--texte-titre);
+}
+
+.titre-bloc .pastille {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: .75rem;
+  background: rgba(14, 165, 233, .1);
+  color: var(--principal);
+}
+
+.icone { width: 1.25rem; height: 1.25rem; }

@@ -1,0 +1,193 @@
+/* =========================================================
+   composants.css : éléments réutilisés dans tout le site
+   (header, boutons, cartes, projets, frise, formulaire)
+   ========================================================= */
+
+/* ---------- Header et navigation ---------- */
+#header.defile {
+  background: rgba(2, 6, 23, .85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .25);
+}
+
+.lien-nav {
+  display: block;
+  padding: .5rem .9rem;
+  border-radius: 9999px;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: color .2s, background-color .2s;
+}
+.lien-nav:hover { color: #fff; }
+.lien-nav.actif { color: #fff; background: var(--principal); }
+
+.burger { display: flex; flex-direction: column; gap: 5px; width: 22px; }
+.burger span { height: 2px; background: currentColor; border-radius: 2px; transition: transform .3s, opacity .3s; }
+.ouvert .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ouvert .burger span:nth-child(2) { opacity: 0; }
+.ouvert .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+#progression { transition: width .1s linear; }
+
+/* ---------- Boutons ---------- */
+.btn-principal,
+.btn-secondaire {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.75rem;
+  border-radius: .9rem;
+  font-weight: 600;
+  transition: transform .2s, box-shadow .2s, background-color .2s;
+}
+
+.btn-principal {
+  background: linear-gradient(135deg, var(--principal), var(--principal-fonce));
+  color: #fff;
+  box-shadow: 0 10px 25px -8px rgba(14, 165, 233, .6);
+}
+.btn-principal:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -8px rgba(14, 165, 233, .8); }
+
+.btn-secondaire { border: 1px solid rgba(255, 255, 255, .25); color: #fff; }
+.btn-secondaire:hover { background: rgba(255, 255, 255, .1); transform: translateY(-2px); }
+
+.reseau {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: #cbd5e1;
+  transition: all .25s;
+}
+.reseau:hover { background: var(--principal); border-color: var(--principal); color: #fff; transform: translateY(-3px); }
+
+/* ---------- Cartes et étiquettes ---------- */
+.carte {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.liste-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.tag {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .3rem .75rem;
+  border-radius: 9999px;
+  background: rgba(14, 165, 233, .1);
+  color: var(--principal-fonce);
+}
+.dark .tag { color: #7dd3fc; }
+
+/* ---------- Compétences ---------- */
+#liste-competences { display: grid; gap: 1.25rem; }
+.competence-entete { display: flex; justify-content: space-between; margin-bottom: .5rem; font-size: .875rem; font-weight: 500; }
+.competence-piste { height: .625rem; border-radius: 9999px; background: var(--bordure); overflow: hidden; }
+.barre {
+  height: 100%;
+  width: 0;                                   /* jQuery anime la largeur */
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--principal), var(--accent));
+}
+
+/* ---------- Projets ---------- */
+.filtre {
+  padding: .55rem 1.3rem;
+  border-radius: 9999px;
+  border: 1px solid var(--bordure);
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: all .25s;
+}
+.dark .filtre { border-color: #334155; }
+.filtre:hover { border-color: var(--principal); color: var(--principal); }
+.filtre.actif { background: var(--principal); border-color: var(--principal); color: #fff; }
+
+.projet { overflow: hidden; }
+.projet:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(14, 165, 233, .35);
+  border-color: rgba(14, 165, 233, .4);
+}
+
+.projet-visuel { height: 11rem; display: grid; place-items: center; }
+.projet-visuel span {
+  font-size: 3.75rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, .9);
+  transition: transform .5s;
+}
+.projet:hover .projet-visuel span { transform: scale(1.12); }
+
+.projet-corps { padding: 1.5rem; }
+.projet-corps h3 { font-size: 1.25rem; font-weight: 700; color: var(--texte-titre); }
+.projet-corps p { margin: .5rem 0 1rem; font-size: .875rem; line-height: 1.6; }
+
+.projet-lien { display: inline-block; margin-top: 1.25rem; font-size: .875rem; font-weight: 600; color: var(--principal); }
+.projet-lien:hover { text-decoration: underline; }
+
+/* ---------- Frise chronologique (CV) ---------- */
+.frise { position: relative; padding-left: 2rem; border-left: 2px solid var(--bordure); }
+.frise li { position: relative; padding-bottom: 2rem; }
+.frise li:last-child { padding-bottom: 0; }
+.frise li::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 9px);
+  top: .25rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--principal);
+  box-shadow: 0 0 0 5px rgba(14, 165, 233, .2);
+}
+.frise .date { font-size: .85rem; font-weight: 600; color: var(--principal); }
+.frise h4 { margin-top: .25rem; font-size: 1.1rem; font-weight: 700; color: var(--texte-titre); }
+.frise p { margin-top: .25rem; font-size: .95rem; }
+
+/* ---------- Contact ---------- */
+.contact-lien { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; }
+.contact-lien:hover { transform: translateY(-4px); }
+.contact-lien .pastille {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: .75rem;
+  color: #fff;
+}
+.contact-lien small { display: block; font-size: .875rem; }
+.contact-lien strong { display: block; color: var(--texte-titre); overflow: hidden; text-overflow: ellipsis; }
+
+.champ {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: .75rem;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.dark .champ { background: #020617; border-color: #334155; color: #e2e8f0; }
+.champ:focus { border-color: var(--principal); box-shadow: 0 0 0 3px rgba(14, 165, 233, .2); }
+.champ.invalide { border-color: #ef4444; }
+.erreur { min-height: 1.1rem; margin-top: .25rem; font-size: .75rem; color: #ef4444; }
+
+/* ---------- Bouton haut et notification ---------- */
+#haut-btn { opacity: 0; pointer-events: none; transform: translateY(20px); transition: all .3s; }
+#haut-btn.montre { opacity: 1; pointer-events: auto; transform: none; }
+
+
+/* Couleur du message de confirmation du formulaire */
+#toast.toast-ok      { background: #047857; }
+#toast.toast-erreur  { background: #b91c1c; }
+
+#toast { opacity: 0; pointer-events: none; transform: translate(-50%, 20px); transition: all .4s; }
+#toast.montre { opacity: 1; transform: translate(-50%, 0); }

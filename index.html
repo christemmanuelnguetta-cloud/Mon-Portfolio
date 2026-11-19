@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de N'GUETTA Christ Emmanuel, étudiant en Réseaux et Télécommunications à l'Institut Ivoirien de Technologie : projets, compétences, CV et contact.">
+  <meta name="theme-color" content="#0f172a">
+  <title>N'GUETTA Christ Emmanuel | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Référencement : ce que Google et les réseaux sociaux affichent -->
+  <meta name="author" content="N'GUETTA Christ Emmanuel">
+  <meta name="keywords" content="portfolio, développeur, Réseaux et Télécommunications, Python, Flutter, HTML, CSS, jQuery, Côte d'Ivoire, IIT, stage">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://portfolio-nce.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="N'GUETTA Christ Emmanuel | Portfolio">
+  <meta property="og:description" content="Étudiant en Réseaux et Télécommunications à l'Institut Ivoirien de Technologie. Projets en Python, Flutter et développement web.">
+  <meta property="og:image" content="https://portfolio-nce.vercel.app/assets/images/photo.jpg">
+  <meta property="og:url" content="https://portfolio-nce.vercel.app/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Police -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme { --font-sans: "Poppins", system-ui, sans-serif; }
+  </style>
+
+  <!-- Mes styles -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1">
+
+  <!-- Applique le theme AVANT le premier affichage (evite le clignotement) -->
+  <script>
+    try {
+      if (localStorage.getItem("theme") === "sombre") {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body class="font-sans bg-slate-50 text-slate-700 dark:bg-slate-950 dark:text-slate-300 transition-colors duration-300">
+
+  <!-- Icones du site, integrees pour qu'elles s'affichent meme
+       quand la page est ouverte directement depuis le disque. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!-- Chaque icone s'utilise avec <use href="#nom"> -->
+
+  <symbol id="github" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/>
+  </symbol>
+
+  <symbol id="linkedin" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/>
+  </symbol>
+
+  <symbol id="mail" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+  </symbol>
+
+  <symbol id="lune" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+  </symbol>
+
+  <symbol id="soleil" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
+    </g>
+  </symbol>
+
+  <symbol id="fleche-bas" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+  </symbol>
+
+  <symbol id="fleche-haut" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </symbol>
+
+  <symbol id="telecharger" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/>
+  </symbol>
+
+  <symbol id="formation" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+      <path d="M12 14v7M5 11.5V16c0 1 3 3 7 3s7-2 7-3v-4.5"/>
+    </g>
+  </symbol>
+
+  <symbol id="experience" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2"/>
+      <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>
+    </g>
+  </symbol>
+
+  <symbol id="telephone" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/>
+  </symbol>
+  </svg>
+
+
+  <!-- Ecran de chargement, retire par assets/js/animations.js.
+       Sans JavaScript il ne doit pas masquer la page : voir le <noscript>. -->
+  <noscript><style>#chargement { display: none; }</style></noscript>
+  <div id="chargement">
+    <div class="chargeur"></div>
+    <p class="chargement-texte">Chargement</p>
+  </div>
+
+  <div id="progression" class="fixed top-0 left-0 h-1 w-0 bg-linear-to-r from-sky-500 to-cyan-400 z-[60]"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-sky-500">.</span></a>
+
+      <nav id="menu" aria-label="Navigation principale"
+           class="hidden md:block absolute md:static top-16 inset-x-0 bg-slate-900/95 md:bg-transparent">
+        <ul class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 p-4 md:p-0">
+          <li><a href="#accueil" class="lien-nav">Accueil</a></li>
+          <li><a href="#apropos" class="lien-nav">À propos</a></li>
+          <li><a href="#projets" class="lien-nav">Projets</a></li>
+          <li><a href="#cv" class="lien-nav">CV</a></li>
+          <li><a href="#contact" class="lien-nav">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="theme-btn" type="button" aria-label="Changer de thème"
+                class="w-10 h-10 grid place-items-center rounded-full text-white hover:bg-white/10 transition">
+          <svg class="icone icone-lune" aria-hidden="true"><use href="#lune"/></svg>
+          <svg class="icone icone-soleil hidden" aria-hidden="true"><use href="#soleil"/></svg>
+        </button>
+        <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false"
+                class="md:hidden w-10 h-10 grid place-items-center rounded-full text-white hover:bg-white/10">
+          <span class="burger"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= ACCUEIL (hero) : qui je suis ================= -->
+    <section id="accueil" class="relative min-h-screen flex items-center overflow-hidden bg-slate-950 text-white">
+      <div class="blob absolute -top-32 -left-32 w-96 h-96 bg-sky-600/30 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="blob blob-2 absolute -bottom-32 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="grille-fond absolute inset-0" aria-hidden="true"></div>
+      <div id="particules" class="absolute inset-0 overflow-hidden" aria-hidden="true"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center w-full">
+        <div class="text-center md:text-left order-2 md:order-1">
+          <p class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-sm">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 pulse"></span>
+            Licence 2 · Réseaux et Télécommunications · IIT
+          </p>
+
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Bonjour, je suis <br>
+            <span class="texte-degrade">Christ Emmanuel</span>
+          </h1>
+
+          <p class="mt-4 text-xl sm:text-2xl text-slate-300 min-h-16 sm:min-h-9">
+            <span id="metier"></span><span class="curseur" aria-hidden="true">|</span>
+          </p>
+
+          <p class="mt-6 text-slate-400 max-w-lg mx-auto md:mx-0">
+            Étudiant en Licence 2 Réseaux et Télécommunications à l'Institut Ivoirien de
+            Technologie, je développe des applications web et mobiles et je me passionne
+            pour les technologies de l'information.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="#projets" class="btn-principal">Voir mes projets</a>
+            <a href="cv.html" class="btn-secondaire">Voir mon CV</a>
+          </div>
+
+          <ul class="mt-8 flex gap-3 justify-center md:justify-start">
+            <li><a href="https://github.com/christemmanuelnguetta-cloud" target="_blank" rel="noopener" aria-label="Mon profil GitHub" class="reseau"><svg class="icone" aria-hidden="true"><use href="#github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/christ-emmanuel-nguetta" target="_blank" rel="noopener" aria-label="Mon profil LinkedIn" class="reseau"><svg class="icone" aria-hidden="true"><use href="#linkedin"/></svg></a></li>
+            <li><a href="mailto:christemmanuelnguetta@gmail.com" aria-label="M'envoyer un e-mail" class="reseau"><svg class="icone" aria-hidden="true"><use href="#mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="order-1 md:order-2 flex justify-center">
+          <div class="relative photo-parallaxe">
+            <div class="anneau absolute -inset-3 rounded-full bg-linear-to-tr from-sky-500 via-cyan-400 to-sky-600 opacity-80 blur-sm" aria-hidden="true"></div>
+            <img src="assets/images/photo.jpg" alt="Portrait de N'GUETTA Christ Emmanuel" width="288" height="288"
+                 class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-slate-950 flotte">
+            <p class="absolute -bottom-2 -left-4 sm:-left-8 bg-white text-slate-900 rounded-2xl shadow-xl px-4 py-2 flotte-2">
+              <span class="block text-xs text-slate-500">Basé à</span>
+              <span class="block font-bold text-sm">Grand-Bassam, CI</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#apropos" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-400 hover:text-white rebond" aria-label="Descendre vers la section À propos">
+        <svg class="icone" aria-hidden="true"><use href="#fleche-bas"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= À PROPOS : ce que je sais faire ================= -->
+    <section id="apropos" class="py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center mb-14 reveal" data-anim="zoom">
+          <p class="sur-titre">Qui suis-je ?</p>
+          <h2 class="titre-section">À propos de moi</h2>
+        </header>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="reveal" data-anim="gauche">
+            <p class="text-lg leading-relaxed">
+              Étudiant en Licence 2 en Réseaux et Télécommunications à l'IIT, je suis
+              passionné par les technologies de l'information et le développement
+              informatique. Je développe mes compétences en réseaux, Python, développement
+              web et technologies modernes à travers un apprentissage continu et des
+              projets concrets.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Curieux, rigoureux et motivé, je souhaite devenir un professionnel capable de
+              concevoir des solutions performantes et innovantes. Je suis ouvert aux
+              opportunités de stage, aux collaborations et aux échanges avec des
+              professionnels.
+            </p>
+            <blockquote class="mt-6 border-l-4 border-sky-500 pl-4 italic text-slate-600 dark:text-slate-400">
+              Apprendre chaque jour, coder avec passion et transformer les idées en solutions.
+            </blockquote>
+
+            <ul class="mt-10 grid grid-cols-3 gap-4 text-center">
+              <li class="carte carte-chiffre p-5">
+                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="3">0</span></p>
+                <p class="text-sm mt-1">Projets</p>
+              </li>
+              <li class="carte carte-chiffre p-5">
+                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="7">0</span></p>
+                <p class="text-sm mt-1">Technologies</p>
+              </li>
+              <li class="carte carte-chiffre p-5">
+                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="2">0</span></p>
+                <p class="text-sm mt-1">Années d'études</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="carte p-8 reveal" data-anim="droite">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Mes compétences</h3>
+            <!-- Rempli par assets/js/rendu.js à partir de data.js -->
+            <ul id="liste-competences"></ul>
+
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-8 mb-3">
+              Autres compétences
+            </h3>
+            <ul id="autres-competences" class="liste-tags"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BANDEAU DES TECHNOLOGIES ================= -->
+    <section class="bandeau py-8 border-y border-slate-200 dark:border-slate-800" aria-label="Technologies que j'utilise">
+      <div class="bandeau-piste">
+        <span>Python</span><span>Réseaux</span><span>HTML5</span><span>CSS3</span><span>Scraping Web</span><span>MySQL</span><span>SQL Server</span><span>Flutter</span><span>Dart</span><span>Tailwind</span><span>jQuery</span><span>Git</span><span>GitHub</span>
+        <span aria-hidden="true">Python</span><span aria-hidden="true">Réseaux</span><span aria-hidden="true">HTML5</span><span aria-hidden="true">CSS3</span><span aria-hidden="true">Scraping Web</span><span aria-hidden="true">MySQL</span><span aria-hidden="true">SQL Server</span><span aria-hidden="true">Flutter</span><span aria-hidden="true">Dart</span><span aria-hidden="true">Tailwind</span><span aria-hidden="true">jQuery</span><span aria-hidden="true">Git</span><span aria-hidden="true">GitHub</span>
+      </div>
+    </section>
+
+    <!-- ================= PROJETS : ce que j'ai fait ================= -->
+    <section id="projets" class="py-24 bg-white dark:bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center mb-10 reveal" data-anim="zoom">
+          <p class="sur-titre">Mon travail</p>
+          <h2 class="titre-section">Mes projets</h2>
+        </header>
+
+        <!-- Filtres et cartes : remplis par assets/js/rendu.js à partir de data.js -->
+        <div id="filtres" class="flex flex-wrap justify-center gap-2 mb-10" role="group" aria-label="Filtrer les projets"></div>
+        <div id="liste-projets" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <noscript><p class="text-center">Activez JavaScript pour voir la liste des projets, ou consultez mon profil GitHub.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ================= CV : mon parcours ================= -->
+    <section id="cv" class="py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center mb-14 reveal" data-anim="zoom">
+          <p class="sur-titre">Mon parcours</p>
+          <h2 class="titre-section">Curriculum Vitae</h2>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="reveal" data-anim="gauche">
+            <h3 class="titre-bloc">
+              <span class="pastille"><svg class="icone" aria-hidden="true"><use href="#formation"/></svg></span>
+              Formation
+            </h3>
+            <ol class="frise">
+              <li>
+                <span class="date">En cours</span>
+                <h4>Licence 2 — Réseaux Informatiques et Télécommunications (RIT)</h4>
+                <p>Institut Ivoirien de Technologie (IIT), Grand-Bassam</p>
+              </li>
+              <li>
+                <span class="date">Obtenu</span>
+                <h4>Baccalauréat série D</h4>
+                <!-- Ajoute ici ton lycee : <p>Nom du lycee, Ville</p> -->
+              </li>
+            </ol>
+          </div>
+
+          <div class="reveal" data-anim="droite">
+            <h3 class="titre-bloc">
+              <span class="pastille"><svg class="icone" aria-hidden="true"><use href="#experience"/></svg></span>
+              Expériences
+            </h3>
+            <ol class="frise">
+              <li>
+                <span class="date">Projet personnel</span>
+                <h4>MyAppHealth — application de santé</h4>
+                <p>Conception d'une application mobile Flutter mettant en relation
+                   un professionnel de santé et un patient, à distance.</p>
+              </li>
+              <li>
+                <span class="date">Projet personnel</span>
+                <h4>Amazon Scraper — extraction de données</h4>
+                <p>Programme Python qui parcourt Amazon.fr et récupère
+                   automatiquement les données des produits technologiques.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 gap-6 reveal" data-anim="bascule">
+          <div class="carte p-6">
+            <h3 class="font-bold text-slate-900 dark:text-white mb-3">Langues</h3>
+            <ul class="liste-tags"><li class="tag">Français (natif)</li><li class="tag">Anglais (intermédiaire)</li></ul>
+          </div>
+          <div class="carte p-6">
+            <h3 class="font-bold text-slate-900 dark:text-white mb-3">Centres d'intérêt</h3>
+            <ul class="liste-tags"><li class="tag">Nouvelles technologies</li><li class="tag">Développement</li></ul>
+          </div>
+        </div>
+
+        <p class="mt-12 text-center reveal" data-anim="zoom">
+          <a href="cv.html" class="btn-principal">
+            <svg class="icone" aria-hidden="true"><use href="#telecharger"/></svg>
+            Voir et télécharger mon CV
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT : me contacter ================= -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-4">
+        <header class="text-center mb-14 reveal" data-anim="zoom">
+          <p class="sur-titre">Travaillons ensemble</p>
+          <h2 class="titre-section">Me contacter</h2>
+        </header>
+
+        <div class="grid lg:grid-cols-5 gap-8">
+          <ul class="lg:col-span-2 space-y-4 reveal" data-anim="gauche">
+            <li>
+              <a href="mailto:christemmanuelnguetta@gmail.com" class="carte contact-lien">
+                <span class="pastille bg-sky-500"><svg class="icone" aria-hidden="true"><use href="#mail"/></svg></span>
+                <span class="min-w-0"><small>E-mail</small><strong>christemmanuelnguetta@gmail.com</strong></span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2250102655722" class="carte contact-lien">
+                <span class="pastille bg-emerald-600"><svg class="icone" aria-hidden="true"><use href="#telephone"/></svg></span>
+                <span class="min-w-0"><small>Téléphone</small><strong>01 02 65 57 22</strong></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/christemmanuelnguetta-cloud" target="_blank" rel="noopener" class="carte contact-lien">
+                <span class="pastille bg-slate-900 dark:bg-slate-700"><svg class="icone" aria-hidden="true"><use href="#github"/></svg></span>
+                <span class="min-w-0"><small>GitHub</small><strong>@christemmanuelnguetta-cloud</strong></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/christ-emmanuel-nguetta" target="_blank" rel="noopener" class="carte contact-lien">
+                <span class="pastille bg-sky-600"><svg class="icone" aria-hidden="true"><use href="#linkedin"/></svg></span>
+                <span class="min-w-0"><small>LinkedIn</small><strong>N'GUETTA Christ Emmanuel</strong></span>
+              </a>
+            </li>
+          </ul>
+
+          <form id="form-contact" class="lg:col-span-3 carte p-6 sm:p-8 space-y-5 reveal" data-anim="droite" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="nom" class="block text-sm font-semibold mb-2">Nom</label>
+                <input id="nom" name="nom" type="text" autocomplete="name" placeholder="Votre nom" class="champ">
+                <p class="erreur" data-pour="nom" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold mb-2">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="exemple@mail.com" class="champ">
+                <p class="erreur" data-pour="email" aria-live="polite"></p>
+              </div>
+            </div>
+            <!-- Piège à robots : invisible pour un visiteur, rempli par les robots -->
+            <input type="text" id="site-web" name="site-web" tabindex="-1" autocomplete="off"
+                   aria-hidden="true" class="absolute opacity-0 w-0 h-0 pointer-events-none">
+
+            <div>
+              <label for="sujet" class="block text-sm font-semibold mb-2">Sujet</label>
+              <input id="sujet" name="sujet" type="text" placeholder="Proposition de stage" class="champ">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Votre message…" class="champ resize-none"></textarea>
+              <div class="flex justify-between">
+                <p class="erreur" data-pour="message" aria-live="polite"></p>
+                <p class="text-xs mt-1"><span id="nb-caracteres">0</span> / 500</p>
+              </div>
+            </div>
+            <button type="submit" class="btn-principal w-full justify-center">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-sky-500">.</span></a>
+      <p class="text-sm text-center">&copy; <span id="annee"></span> Créer par Christ Emmanuel N'guetta 2026</p>
+      <ul class="flex gap-3">
+        <li><a href="https://github.com/christemmanuelnguetta-cloud" target="_blank" rel="noopener" class="reseau" aria-label="GitHub"><svg class="icone" aria-hidden="true"><use href="#github"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/christ-emmanuel-nguetta" target="_blank" rel="noopener" class="reseau" aria-label="LinkedIn"><svg class="icone" aria-hidden="true"><use href="#linkedin"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button id="haut-btn" type="button" aria-label="Revenir en haut de la page"
+          class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-sky-500 text-white shadow-lg grid place-items-center hover:bg-sky-600 z-40">
+    <svg class="icone" aria-hidden="true"><use href="#fleche-haut"/></svg>
+  </button>
+
+  <div id="toast" role="status" class="fixed bottom-6 left-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-xl z-50 text-sm"></div>
+
+  <!-- ================= SCRIPTS (l'ordre compte) ================= -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/data.js?v=1"></script>        <!-- 1. le contenu -->
+  <script src="assets/js/rendu.js?v=1"></script>       <!-- 2. fabrique compétences et projets -->
+  <script src="assets/js/theme.js?v=1"></script>       <!-- 3. mode sombre -->
+  <script src="assets/js/navigation.js?v=1"></script>  <!-- 4. menu, header, retour en haut -->
+  <script src="assets/js/animations.js?v=1"></script>  <!-- 5. animations au défilement -->
+  <script src="assets/js/projets.js?v=1"></script>     <!-- 6. filtre des projets -->
+  <script src="assets/js/contact.js?v=1"></script>     <!-- 7. formulaire -->
+</body>
+</html>

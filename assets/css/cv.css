@@ -1,0 +1,228 @@
+/* =========================================================
+   cv.css : mise en page du CV (cv.html)
+   Pensée pour l'écran ET pour l'impression / export PDF.
+   Format visé : une page A4 (210 x 297 mm).
+   ========================================================= */
+
+body.page-cv {
+  background: #e2e8f0;
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #334155;
+}
+
+/* ---------- Barre d'outils (masquée à l'impression) ---------- */
+.cv-outils {
+  max-width: 210mm;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.cv-outils .btn-principal,
+.cv-outils .btn-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.4rem;
+  border-radius: .8rem;
+  font-weight: 600;
+  font-size: .9rem;
+  border: 0;
+  cursor: pointer;
+}
+.cv-outils .btn-retour {
+  background: #fff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+.cv-outils .btn-retour:hover { background: #f1f5f9; }
+
+
+/* Taille des icones SVG du bouton */
+.icone { width: 1.1rem; height: 1.1rem; }
+
+/* Bouton principal de la page CV */
+.cv-outils .btn-principal {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  color: #fff;
+  box-shadow: 0 10px 25px -8px rgba(14, 165, 233, .6);
+  transition: transform .2s, box-shadow .2s;
+}
+.cv-outils .btn-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(14, 165, 233, .85);
+}
+.btn-retour { text-decoration: none; transition: background-color .2s; }
+
+/* ---------- La feuille ---------- */
+.feuille {
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, .18);
+  display: grid;
+  grid-template-columns: 68mm 1fr;
+  overflow: hidden;
+}
+
+/* ---------- Colonne de gauche ---------- */
+.cv-cote {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 12mm 8mm;
+}
+
+.cv-photo {
+  width: 36mm;
+  height: 36mm;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0ea5e9;
+  display: block;
+  margin: 0 auto 6mm;
+}
+
+.cv-cote h2 {
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #0ea5e9;
+  margin: 8mm 0 3mm;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+.cv-cote h2:first-of-type { margin-top: 0; }
+
+.cv-cote ul { list-style: none; margin: 0; padding: 0; }
+.cv-cote li { font-size: 9.5pt; line-height: 1.6; margin-bottom: 2mm; word-break: break-word; }
+.cv-cote a { color: #cbd5e1; text-decoration: none; }
+.cv-cote a:hover { color: #fff; text-decoration: underline; }
+
+/* Barres de niveau (statiques, pour l'impression) */
+.cv-niveau { margin-bottom: 3mm; }
+.cv-niveau span { display: block; font-size: 9.5pt; margin-bottom: 1.2mm; }
+.cv-niveau div { height: 4px; background: rgba(255, 255, 255, .15); border-radius: 4px; overflow: hidden; }
+.cv-niveau i { display: block; height: 100%; background: linear-gradient(90deg, #0ea5e9, #22d3ee); }
+
+.cv-puces { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+.cv-puces li {
+  font-size: 8.5pt;
+  padding: 1mm 2.5mm;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, .18);
+  color: #7dd3fc;
+  margin: 0;
+}
+
+/* ---------- Colonne de droite ---------- */
+.cv-principal { padding: 10mm 9mm; }
+
+.cv-entete { border-bottom: 2px solid #f1f5f9; padding-bottom: 5mm; margin-bottom: 6mm; }
+.cv-entete h1 {
+  margin: 0;
+  font-size: 24pt;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+.cv-entete p {
+  margin: 2mm 0 0;
+  font-size: 12pt;
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+.cv-principal h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #0f172a;
+  margin: 6mm 0 3.5mm;
+}
+.cv-principal h2::before {
+  content: "";
+  width: 4mm;
+  height: 4mm;
+  border-radius: 1mm;
+  background: #0ea5e9;
+  flex-shrink: 0;
+}
+.cv-principal h2:first-of-type { margin-top: 0; }
+
+.cv-principal p { font-size: 10pt; line-height: 1.65; margin: 0 0 3mm; }
+
+/* Blocs formation / expérience */
+.cv-bloc { position: relative; padding-left: 6mm; margin-bottom: 4mm; }
+.cv-bloc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.8mm;
+  width: 2.5mm;
+  height: 2.5mm;
+  border-radius: 50%;
+  background: #0ea5e9;
+}
+.cv-bloc::after {
+  content: "";
+  position: absolute;
+  left: 1.1mm;
+  top: 5mm;
+  bottom: -3mm;
+  width: 1px;
+  background: #e2e8f0;
+}
+.cv-bloc:last-child::after { display: none; }
+
+.cv-bloc .cv-date { font-size: 8.5pt; font-weight: 600; color: #0ea5e9; }
+.cv-bloc h3 { margin: .5mm 0 1mm; font-size: 11pt; font-weight: 700; color: #0f172a; }
+.cv-bloc .cv-lieu { font-size: 9.5pt; font-style: italic; color: #64748b; }
+.cv-bloc ul { margin: 1.5mm 0 0; padding-left: 4mm; }
+.cv-bloc li { font-size: 9.5pt; line-height: 1.55; }
+
+.cv-projets { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+.cv-projet { border: 1px solid #e2e8f0; border-radius: 2mm; padding: 3mm; }
+.cv-projet h3 { margin: 0 0 1mm; font-size: 10pt; color: #0f172a; }
+.cv-projet p { font-size: 8.5pt; line-height: 1.5; margin: 0 0 1.5mm; }
+.cv-projet small { font-size: 8pt; color: #0ea5e9; font-weight: 600; }
+
+/* ---------- Téléphone : une seule colonne ---------- */
+@media (max-width: 760px) {
+  body.page-cv { padding: 1rem .75rem 3rem; }
+  .feuille { width: 100%; min-height: 0; grid-template-columns: 1fr; }
+  .cv-cote { padding: 8mm 6mm; }
+  .cv-principal { padding: 8mm 6mm; }
+  .cv-projets { grid-template-columns: 1fr; }
+  .cv-entete h1 { font-size: 20pt; }
+}
+
+/* ---------- Impression et export PDF ---------- */
+@page { size: A4; margin: 0; }
+
+@media print {
+  body.page-cv { background: #fff; padding: 0; }
+  .cv-outils, .ne-pas-imprimer { display: none !important; }
+  .feuille {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    box-shadow: none;
+    grid-template-columns: 68mm 1fr;
+  }
+  /* Garde les couleurs de fond à l'impression */
+  .cv-cote, .cv-puces li, .cv-niveau i, .cv-bloc::before, .cv-principal h2::before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-bloc, .cv-projet { break-inside: avoid; }
+  a { text-decoration: none; color: inherit; }
+}

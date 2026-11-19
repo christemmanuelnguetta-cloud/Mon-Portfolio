@@ -1,0 +1,8 @@
+# Fichiers qui ne doivent pas aller sur GitHub
+.claude/
+.vscode/
+.vercel/
+.DS_Store
+Thumbs.db
+
+.vercel

@@ -1,0 +1,9 @@
+Place ici ton CV au format PDF, nomme exactement : cv.pdf
+
+Comment l'obtenir :
+  1. Ouvre cv.html dans le navigateur.
+  2. Clique sur « Telecharger en PDF ».
+  3. Dans la fenetre d'impression, choisis « Enregistrer au format PDF ».
+  4. Enregistre le fichier ici sous le nom cv.pdf
+
+Des que ce fichier existe, le bouton le telecharge directement.

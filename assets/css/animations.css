@@ -1,0 +1,383 @@
+/* =========================================================
+   animations.css : TOUTES LES ANIMATIONS DU SITE
+
+   Sommaire
+     1.  Écran de chargement
+     2.  Décor animé du hero
+     3.  Photo, anneau et badges
+     4.  Texte : frappe, dégradé, soulignement
+     5.  Boutons : brillance, pulsation
+     6.  Cartes : lueur et survol
+     7.  Apparition au défilement (8 variantes)
+     8.  Bandeau défilant des technologies
+     9.  Barres, compteurs et notifications
+     10. Accessibilité
+   ========================================================= */
+
+
+/* =========================================================
+   1. ÉCRAN DE CHARGEMENT
+   ========================================================= */
+#chargement {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  background: #020617;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+#chargement.fini { opacity: 0; visibility: hidden; }
+
+.chargeur {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(14, 165, 233, .2);
+  border-top-color: var(--principal);
+  border-radius: 50%;
+  animation: rotation .9s linear infinite;
+}
+
+.chargement-texte {
+  margin-top: 1.25rem;
+  color: #94a3b8;
+  font-size: .8rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  animation: respirer 1.6s ease-in-out infinite;
+}
+
+@keyframes rotation { to { transform: rotate(360deg); } }
+@keyframes respirer { 50% { opacity: .35; } }
+
+
+/* =========================================================
+   2. DÉCOR ANIMÉ DU HERO
+   ========================================================= */
+
+/* Grille d'arrière-plan qui glisse lentement */
+.grille-fond {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  animation: glisser-grille 20s linear infinite;
+}
+@keyframes glisser-grille { to { background-position: 50px 50px; } }
+
+/* Formes floues qui dérivent et se déforment */
+@keyframes deriver {
+  0%   { transform: translate(0, 0) scale(1);          border-radius: 50%; }
+  33%  { transform: translate(40px, 30px) scale(1.1);  border-radius: 60% 40% 55% 45%; }
+  66%  { transform: translate(-25px, 45px) scale(.95); border-radius: 40% 60% 45% 55%; }
+  100% { transform: translate(0, 0) scale(1);          border-radius: 50%; }
+}
+.blob   { animation: deriver 14s ease-in-out infinite; }
+.blob-2 { animation: deriver 18s ease-in-out infinite -7s; }
+
+/* Petites particules qui montent (créées par animations.js) */
+.particule {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(34, 211, 238, .55);
+  pointer-events: none;
+  animation: monter linear infinite;
+}
+@keyframes monter {
+  0%   { transform: translateY(0) scale(0);     opacity: 0; }
+  12%  { transform: translateY(-12vh) scale(1); opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(-95vh) scale(.4); opacity: 0; }
+}
+
+
+/* =========================================================
+   3. PHOTO, ANNEAU ET BADGES
+   ========================================================= */
+
+/* Anneau de couleur qui tourne autour de la photo */
+.anneau { animation: rotation 8s linear infinite; }
+
+/* Photo et badge qui flottent doucement */
+@keyframes flotter { 50% { transform: translateY(-12px); } }
+.flotte   { animation: flotter 6s ease-in-out infinite; transition: filter .4s; }
+.flotte:hover { filter: brightness(1.08) contrast(1.05); }
+.flotte-2 { animation: flotter 5s ease-in-out infinite -2s; }
+
+/* Point vert « disponible » qui pulse */
+@keyframes pulser {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, .7); }
+  100% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+}
+.pulse { animation: pulser 1.5s infinite; }
+
+/* Flèche qui rebondit en bas du hero */
+@keyframes rebondir { 50% { transform: translateY(10px); } }
+.rebond { animation: rebondir 2s ease-in-out infinite; }
+
+
+/* =========================================================
+   4. TEXTE : FRAPPE, DÉGRADÉ, SOULIGNEMENT
+   ========================================================= */
+
+/* Curseur clignotant du texte qui s'écrit tout seul */
+@keyframes clignoter { 50% { opacity: 0; } }
+.curseur { color: var(--principal); animation: clignoter 1s step-end infinite; }
+
+/* Dégradé du nom qui se déplace sans arrêt */
+.texte-degrade {
+  background: linear-gradient(90deg, #0ea5e9, #22d3ee, #38bdf8, #0ea5e9);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: defiler-degrade 6s linear infinite;
+}
+@keyframes defiler-degrade { to { background-position: 300% 0; } }
+
+/* Soulignement qui se dessine sous les liens du menu */
+.lien-nav { position: relative; }
+.lien-nav::after {
+  content: "";
+  position: absolute;
+  left: .9rem;
+  right: .9rem;
+  bottom: .3rem;
+  height: 2px;
+  background: var(--principal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.lien-nav:hover::after { transform: scaleX(1); }
+.lien-nav.actif::after { transform: scaleX(0); }
+
+
+/* =========================================================
+   5. BOUTONS : BRILLANCE, PULSATION
+   ========================================================= */
+
+/* Reflet qui traverse le bouton au survol */
+.btn-principal,
+.btn-secondaire { position: relative; overflow: hidden; }
+
+.btn-principal::before,
+.btn-secondaire::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .35), transparent);
+  transition: left .6s ease;
+}
+.btn-principal:hover::before,
+.btn-secondaire:hover::before { left: 130%; }
+
+/* L'icône du bouton sautille au survol */
+@keyframes sautiller { 50% { transform: translateY(-4px); } }
+.btn-principal:hover .icone { animation: sautiller .6s ease; }
+
+/* Bouton retour en haut : halo qui pulse */
+@keyframes pulser-ombre {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, .5); }
+  50%      { box-shadow: 0 0 0 12px rgba(14, 165, 233, 0); }
+}
+#haut-btn:hover { animation: pulser-ombre 1.2s ease-in-out infinite; }
+
+/* Réseaux sociaux : légère rotation au survol */
+.reseau:hover { transform: translateY(-4px) rotate(-8deg); }
+
+
+/* =========================================================
+   6. CARTES : LUEUR ET SURVOL
+   ========================================================= */
+
+/* Liseré bleu qui apparaît sur la carte projet */
+.projet { position: relative; }
+.projet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(14, 165, 233, 0);
+  transition: box-shadow .35s ease;
+  pointer-events: none;
+}
+.projet:hover::after { box-shadow: inset 0 0 0 1px rgba(14, 165, 233, .5); }
+
+/* Le symbole du projet tourne un peu au survol */
+.projet:hover .projet-visuel span { transform: scale(1.15) rotate(-6deg); }
+
+/* Les étiquettes se soulèvent */
+.tag { transition: transform .25s ease, background-color .25s ease; }
+.tag:hover { transform: translateY(-3px); background: rgba(14, 165, 233, .22); }
+
+/* Cartes de contact : la pastille pivote */
+.contact-lien .pastille { transition: transform .35s ease; }
+.contact-lien:hover .pastille { transform: rotate(-10deg) scale(1.08); }
+
+/* Chiffres clés */
+.carte-chiffre { transition: transform .3s ease; }
+.carte-chiffre:hover { transform: translateY(-6px) scale(1.04); }
+
+/* Pastille des titres de bloc */
+.titre-bloc .pastille { transition: transform .35s ease; }
+.titre-bloc:hover .pastille { transform: rotate(-12deg); }
+
+/* Points de la frise : halo qui pulse au survol */
+@keyframes pulser-point {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(14, 165, 233, .2); }
+  50%      { box-shadow: 0 0 0 10px rgba(14, 165, 233, .08); }
+}
+.frise li:hover::before { animation: pulser-point 1.2s ease-in-out infinite; }
+
+
+/* =========================================================
+   7. APPARITION AU DÉFILEMENT (8 VARIANTES)
+   La classe .visible est ajoutée par assets/js/animations.js.
+   On choisit la variante avec data-anim="..." dans le HTML.
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1), filter .8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal:not([data-anim]),
+.reveal[data-anim="bas"]      { transform: translateY(45px); }
+.reveal[data-anim="haut"]     { transform: translateY(-45px); }
+.reveal[data-anim="gauche"]   { transform: translateX(-60px); }
+.reveal[data-anim="droite"]   { transform: translateX(60px); }
+.reveal[data-anim="zoom"]     { transform: scale(.88); }
+.reveal[data-anim="rotation"] { transform: rotate(-6deg) scale(.92); }
+.reveal[data-anim="bascule"]  { transform: perspective(900px) rotateX(25deg); transform-origin: top; }
+.reveal[data-anim="flou"]     { filter: blur(10px); transform: scale(1.04); }
+
+.reveal.visible { opacity: 1; transform: none; filter: none; }
+
+/* Sur petit ecran, pas de translation laterale : elle pourrait
+   provoquer un defilement horizontal, interdit par le cahier des charges. */
+@media (max-width: 767px) {
+  .reveal[data-anim="gauche"],
+  .reveal[data-anim="droite"] { transform: translateY(45px); }
+}
+
+/* Une fois apparue, la carte retrouve un survol rapide */
+.carte.reveal.visible { transition: opacity .8s ease, transform .3s, box-shadow .3s, border-color .3s; }
+
+/* Décalage en cascade : les cartes arrivent l'une après l'autre */
+.reveal[data-retard="1"] { transition-delay: .10s; }
+.reveal[data-retard="2"] { transition-delay: .20s; }
+.reveal[data-retard="3"] { transition-delay: .30s; }
+.reveal[data-retard="4"] { transition-delay: .40s; }
+.reveal[data-retard="5"] { transition-delay: .50s; }
+
+
+/* =========================================================
+   8. BANDEAU DÉFILANT DES TECHNOLOGIES
+   ========================================================= */
+.bandeau {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.bandeau-piste {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: defiler-bandeau 26s linear infinite;
+}
+.bandeau:hover .bandeau-piste { animation-play-state: paused; }
+.bandeau-piste span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--texte-doux);
+  white-space: nowrap;
+  transition: color .3s;
+}
+.bandeau-piste span:hover { color: var(--principal); }
+@keyframes defiler-bandeau { to { transform: translateX(-50%); } }
+
+
+/* =========================================================
+   9. BARRES, COMPTEURS ET NOTIFICATIONS
+   ========================================================= */
+
+/* Reflet qui passe sur les barres de compétences */
+.barre { position: relative; overflow: hidden; }
+.barre::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: translateX(-100%);
+  animation: reflet 2.6s ease-in-out infinite;
+}
+@keyframes reflet { 60%, 100% { transform: translateX(100%); } }
+
+/* Notification qui monte depuis le bas */
+@keyframes arriver-toast {
+  from { transform: translate(-50%, 40px) scale(.92); opacity: 0; }
+  to   { transform: translate(-50%, 0) scale(1);      opacity: 1; }
+}
+#toast.montre { animation: arriver-toast .45s cubic-bezier(.2, .9, .3, 1.3); }
+
+/* Champ de formulaire en erreur : petite secousse */
+@keyframes secousse {
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-3px); }
+}
+.champ.invalide { animation: secousse .4s; }
+
+
+/* =========================================================
+   11. QUATRE ANIMATIONS DISCRETES EN PLUS
+   ========================================================= */
+
+/* a) Le trait sous le titre de section se dessine a l'apparition */
+.titre-section::after { transform: scaleX(0); transform-origin: center; transition: transform .7s cubic-bezier(.2,.8,.2,1) .2s; }
+.reveal.visible .titre-section::after { transform: scaleX(1); }
+
+/* b) Leger relief 3D sur les cartes projets au survol */
+.projet { transform-style: preserve-3d; }
+.projet:hover { transform: translateY(-6px) rotateX(2deg) rotateY(-2deg); }
+
+/* c) Les boutons s'enfoncent legerement au clic */
+.btn-principal:active, .btn-secondaire:active, .filtre:active { transform: translateY(1px) scale(.98); }
+
+/* d) La photo du hero suit doucement la souris (gere par animations.js) */
+.photo-parallaxe { transition: transform .3s ease-out; }
+
+/* e) Les etiquettes de competences apparaissent en cascade */
+@keyframes arriver-tag { from { opacity: 0; transform: translateY(8px); } }
+#autres-competences .tag { animation: arriver-tag .4s backwards; }
+#autres-competences .tag:nth-child(1) { animation-delay: .05s; }
+#autres-competences .tag:nth-child(2) { animation-delay: .10s; }
+#autres-competences .tag:nth-child(3) { animation-delay: .15s; }
+#autres-competences .tag:nth-child(4) { animation-delay: .20s; }
+#autres-competences .tag:nth-child(5) { animation-delay: .25s; }
+#autres-competences .tag:nth-child(6) { animation-delay: .30s; }
+#autres-competences .tag:nth-child(7) { animation-delay: .35s; }
+
+
+/* =========================================================
+   10. ACCESSIBILITÉ
+   Si le visiteur demande moins d'animations dans les
+   réglages de son système, on les coupe toutes.
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; filter: none; }
+  #chargement { display: none; }
+}
