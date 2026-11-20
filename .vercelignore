@@ -1,0 +1,5 @@
+# Fichiers que Vercel ne doit pas publier
+venv/
+__pycache__/
+.vscode/
+.claude/
