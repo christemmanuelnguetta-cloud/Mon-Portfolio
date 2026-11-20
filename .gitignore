@@ -10,3 +10,6 @@ Thumbs.db
 # Environnement virtuel Python (propre à chaque ordinateur)
 venv/
 __pycache__/
+
+.vercel
+.env*
