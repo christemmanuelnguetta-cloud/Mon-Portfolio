@@ -5,12 +5,12 @@
    Il assemble les trois fichiers ci-dessous, ce qui garde
    le code rangé tout en n'ayant qu'un seul <link>.
 
-   Le ?v=1 force le navigateur à recharger les fichiers au
+   Le ?v=2 force le navigateur à recharger les fichiers au
    lieu de servir une ancienne version gardée en mémoire.
    Après une modification du CSS, augmenter ce numéro
    (ici ET dans index.html / cv.html).
    ========================================================= */
 
-@import url("base.css?v=1");         /* variables, réglages généraux, titres */
-@import url("composants.css?v=1");   /* header, boutons, cartes, frise, formulaire */
-@import url("animations.css?v=1");   /* toutes les animations CSS3 */
+@import url("base.css?v=2");         /* variables, réglages généraux, titres */
+@import url("composants.css?v=2");   /* header, boutons, cartes, frise, formulaire */
+@import url("animations.css?v=2");   /* toutes les animations CSS3 */

@@ -3,9 +3,11 @@
    ========================================================= */
 
 :root {
-  --principal: #0ea5e9;
-  --principal-fonce: #0369a1;
-  --accent: #22d3ee;
+  /* Palette : sarcelle apaisante + touche d'ambre qui attire l'oeil */
+  --principal: #0d9488;
+  --principal-fonce: #0f766e;
+  --accent: #f59e0b;
+  --lien: #0f766e;              /* texte coloré, lisible sur fond clair */
   --texte-titre: #0f172a;
   --bordure: #e2e8f0;
   --fond-carte: #ffffff;
@@ -14,10 +16,11 @@
 
 /* Mode sombre : on change seulement les variables */
 .dark {
-  --texte-titre: #ffffff;
-  --bordure: #1e293b;
-  --fond-carte: #0f172a;
-  --texte-doux: #94a3b8;
+  --lien: #2dd4bf;
+  --texte-titre: #f1f5f9;       /* blanc cassé : moins éblouissant que le blanc pur */
+  --bordure: #334155;
+  --fond-carte: #1e293b;
+  --texte-doux: #a3b1c6;
 }
 
 * { box-sizing: border-box; }               /* la largeur inclut padding et bordure */
@@ -27,7 +30,7 @@ section { scroll-margin-top: 64px; }        /* les ancres ne passent pas sous le
 
 /* ---------- Titres de section ---------- */
 .sur-titre {
-  color: var(--principal);
+  color: var(--lien);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .15em;
@@ -67,8 +70,8 @@ section { scroll-margin-top: 64px; }        /* les ancres ne passent pas sous le
   display: grid;
   place-items: center;
   border-radius: .75rem;
-  background: rgba(14, 165, 233, .1);
-  color: var(--principal);
+  background: rgba(13, 148, 136, .12);
+  color: var(--lien);
 }
 
 .icone { width: 1.25rem; height: 1.25rem; }

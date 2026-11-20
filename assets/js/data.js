@@ -71,7 +71,7 @@ var PORTFOLIO = {
       description: "Application de santé qui permet à un professionnel de santé et à un patient d'interagir à distance, par Internet.",
       categorie: "mobile",
       symbole: "+",
-      couleurs: ["#0ea5e9", "#0d9488"],
+      couleurs: ["#14b8a6", "#0f766e"],
       technologies: ["Flutter", "Dart"],
       lien: "https://github.com/christemmanuelnguetta-cloud/myapphealth"
     },
@@ -80,7 +80,7 @@ var PORTFOLIO = {
       description: "Programme qui parcourt Amazon.fr et extrait automatiquement toutes les données liées aux produits technologiques.",
       categorie: "python",
       symbole: "Py",
-      couleurs: ["#6366f1", "#4338ca"],
+      couleurs: ["#f59e0b", "#b45309"],
       technologies: ["Python", "HTML", "CSS"],
       lien: "https://github.com/christemmanuelnguetta-cloud/scraping_amazon"
     },
@@ -89,7 +89,7 @@ var PORTFOLIO = {
       description: "Ce site : portfolio responsive avec mode sombre, filtres de projets, animations et CV téléchargeable, déployé sur Vercel.",
       categorie: "web",
       symbole: "{ }",
-      couleurs: ["#8b5cf6", "#d946ef"],
+      couleurs: ["#0f766e", "#1e293b"],
       technologies: ["HTML5", "Tailwind", "jQuery"],
       lien: "https://github.com/christemmanuelnguetta-cloud"
     }

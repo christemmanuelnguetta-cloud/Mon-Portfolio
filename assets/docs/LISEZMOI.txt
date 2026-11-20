@@ -1,9 +1,9 @@
-Place ici ton CV au format PDF, nomme exactement : cv.pdf
+cv.pdf est le CV que les visiteurs telechargent depuis le site.
 
-Comment l'obtenir :
-  1. Ouvre cv.html dans le navigateur.
-  2. Clique sur « Telecharger en PDF ».
-  3. Dans la fenetre d'impression, choisis « Enregistrer au format PDF ».
-  4. Enregistre le fichier ici sous le nom cv.pdf
-
-Des que ce fichier existe, le bouton le telecharge directement.
+Il est genere a partir de cv.html. Si tu modifies cv.html ou cv.css,
+refais le PDF pour qu'il reste a jour :
+  1. Ouvre cv.html dans Chrome ou Edge.
+  2. Fais Ctrl + P.
+  3. Destination : « Enregistrer au format PDF », marges : Aucune,
+     coche « Graphiques d'arriere-plan ».
+  4. Enregistre le fichier ici sous le nom cv.pdf (remplace l'ancien).

@@ -35,7 +35,7 @@
   </style>
 
   <!-- Mes styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=1">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
 
   <!-- Applique le theme AVANT le premier affichage (evite le clignotement) -->
   <script>
@@ -46,7 +46,7 @@
     } catch (e) {}
   </script>
 </head>
-<body class="font-sans bg-slate-50 text-slate-700 dark:bg-slate-950 dark:text-slate-300 transition-colors duration-300">
+<body class="font-sans bg-slate-50 text-slate-700 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
 
   <!-- Icones du site, integrees pour qu'elles s'affichent meme
        quand la page est ouverte directement depuis le disque. -->
@@ -116,12 +116,12 @@
     <p class="chargement-texte">Chargement</p>
   </div>
 
-  <div id="progression" class="fixed top-0 left-0 h-1 w-0 bg-linear-to-r from-sky-500 to-cyan-400 z-[60]"></div>
+  <div id="progression" class="fixed top-0 left-0 h-1 w-0 bg-linear-to-r from-teal-500 to-amber-400 z-[60]"></div>
 
   <!-- ================= HEADER ================= -->
   <header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-sky-500">.</span></a>
+      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-amber-400">.</span></a>
 
       <nav id="menu" aria-label="Navigation principale"
            class="hidden md:block absolute md:static top-16 inset-x-0 bg-slate-900/95 md:bg-transparent">
@@ -150,16 +150,16 @@
 
   <main>
     <!-- ================= ACCUEIL (hero) : qui je suis ================= -->
-    <section id="accueil" class="relative min-h-screen flex items-center overflow-hidden bg-slate-950 text-white">
-      <div class="blob absolute -top-32 -left-32 w-96 h-96 bg-sky-600/30 rounded-full blur-3xl" aria-hidden="true"></div>
-      <div class="blob blob-2 absolute -bottom-32 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+    <section id="accueil" class="relative min-h-screen flex items-center overflow-hidden bg-slate-900 text-white">
+      <div class="blob absolute -top-32 -left-32 w-96 h-96 bg-teal-500/25 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="blob blob-2 absolute -bottom-32 -right-20 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl" aria-hidden="true"></div>
       <div class="grille-fond absolute inset-0" aria-hidden="true"></div>
       <div id="particules" class="absolute inset-0 overflow-hidden" aria-hidden="true"></div>
 
       <div class="relative max-w-6xl mx-auto px-4 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center w-full">
         <div class="text-center md:text-left order-2 md:order-1">
           <p class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-sm">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-amber-400 pulse"></span>
             Licence 2 · Réseaux et Télécommunications · IIT
           </p>
 
@@ -192,9 +192,9 @@
 
         <div class="order-1 md:order-2 flex justify-center">
           <div class="relative photo-parallaxe">
-            <div class="anneau absolute -inset-3 rounded-full bg-linear-to-tr from-sky-500 via-cyan-400 to-sky-600 opacity-80 blur-sm" aria-hidden="true"></div>
+            <div class="anneau absolute -inset-3 rounded-full bg-linear-to-tr from-teal-400 via-amber-300 to-teal-600 opacity-80 blur-sm" aria-hidden="true"></div>
             <img src="assets/images/photo.jpg" alt="Portrait de N'GUETTA Christ Emmanuel" width="288" height="288"
-                 class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-slate-950 flotte">
+                 class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-slate-900 flotte">
             <p class="absolute -bottom-2 -left-4 sm:-left-8 bg-white text-slate-900 rounded-2xl shadow-xl px-4 py-2 flotte-2">
               <span class="block text-xs text-slate-500">Basé à</span>
               <span class="block font-bold text-sm">Grand-Bassam, CI</span>
@@ -231,21 +231,21 @@
               opportunités de stage, aux collaborations et aux échanges avec des
               professionnels.
             </p>
-            <blockquote class="mt-6 border-l-4 border-sky-500 pl-4 italic text-slate-600 dark:text-slate-400">
+            <blockquote class="mt-6 border-l-4 border-teal-500 pl-4 italic text-slate-600 dark:text-slate-400">
               Apprendre chaque jour, coder avec passion et transformer les idées en solutions.
             </blockquote>
 
             <ul class="mt-10 grid grid-cols-3 gap-4 text-center">
               <li class="carte carte-chiffre p-5">
-                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="3">0</span></p>
+                <p class="text-3xl font-extrabold text-teal-600 dark:text-teal-400"><span class="compteur" data-cible="3">0</span></p>
                 <p class="text-sm mt-1">Projets</p>
               </li>
               <li class="carte carte-chiffre p-5">
-                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="7">0</span></p>
+                <p class="text-3xl font-extrabold text-teal-600 dark:text-teal-400"><span class="compteur" data-cible="7">0</span></p>
                 <p class="text-sm mt-1">Technologies</p>
               </li>
               <li class="carte carte-chiffre p-5">
-                <p class="text-3xl font-extrabold text-sky-500"><span class="compteur" data-cible="2">0</span></p>
+                <p class="text-3xl font-extrabold text-teal-600 dark:text-teal-400"><span class="compteur" data-cible="2">0</span></p>
                 <p class="text-sm mt-1">Années d'études</p>
               </li>
             </ul>
@@ -274,7 +274,7 @@
     </section>
 
     <!-- ================= PROJETS : ce que j'ai fait ================= -->
-    <section id="projets" class="py-24 bg-white dark:bg-slate-900/50">
+    <section id="projets" class="py-24 bg-white dark:bg-slate-800/40">
       <div class="max-w-6xl mx-auto px-4">
         <header class="text-center mb-10 reveal" data-anim="zoom">
           <p class="sur-titre">Mon travail</p>
@@ -350,17 +350,18 @@
           </div>
         </div>
 
-        <p class="mt-12 text-center reveal" data-anim="zoom">
-          <a href="cv.html" class="btn-principal">
+        <p class="mt-12 flex flex-wrap justify-center gap-4 reveal" data-anim="zoom">
+          <a href="assets/docs/cv.pdf" download="CV-NGUETTA-Christ-Emmanuel.pdf" class="btn-principal">
             <svg class="icone" aria-hidden="true"><use href="#telecharger"/></svg>
-            Voir et télécharger mon CV
+            Télécharger mon CV (PDF)
           </a>
+          <a href="cv.html" class="btn-contour">Voir mon CV en ligne</a>
         </p>
       </div>
     </section>
 
     <!-- ================= CONTACT : me contacter ================= -->
-    <section id="contact" class="py-24 bg-white dark:bg-slate-900/50">
+    <section id="contact" class="py-24 bg-white dark:bg-slate-800/40">
       <div class="max-w-6xl mx-auto px-4">
         <header class="text-center mb-14 reveal" data-anim="zoom">
           <p class="sur-titre">Travaillons ensemble</p>
@@ -371,7 +372,7 @@
           <ul class="lg:col-span-2 space-y-4 reveal" data-anim="gauche">
             <li>
               <a href="mailto:christemmanuelnguetta@gmail.com" class="carte contact-lien">
-                <span class="pastille bg-sky-500"><svg class="icone" aria-hidden="true"><use href="#mail"/></svg></span>
+                <span class="pastille bg-teal-600"><svg class="icone" aria-hidden="true"><use href="#mail"/></svg></span>
                 <span class="min-w-0"><small>E-mail</small><strong>christemmanuelnguetta@gmail.com</strong></span>
               </a>
             </li>
@@ -389,7 +390,7 @@
             </li>
             <li>
               <a href="https://www.linkedin.com/in/christ-emmanuel-nguetta" target="_blank" rel="noopener" class="carte contact-lien">
-                <span class="pastille bg-sky-600"><svg class="icone" aria-hidden="true"><use href="#linkedin"/></svg></span>
+                <span class="pastille bg-blue-700"><svg class="icone" aria-hidden="true"><use href="#linkedin"/></svg></span>
                 <span class="min-w-0"><small>LinkedIn</small><strong>N'GUETTA Christ Emmanuel</strong></span>
               </a>
             </li>
@@ -432,9 +433,9 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-slate-950 text-slate-400 border-t border-white/5">
+  <footer class="bg-slate-900 text-slate-400 border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-sky-500">.</span></a>
+      <a href="#accueil" class="text-2xl font-extrabold text-white">NCE<span class="text-amber-400">.</span></a>
       <p class="text-sm text-center">&copy; <span id="annee"></span> Créer par Christ Emmanuel N'guetta 2026</p>
       <ul class="flex gap-3">
         <li><a href="https://github.com/christemmanuelnguetta-cloud" target="_blank" rel="noopener" class="reseau" aria-label="GitHub"><svg class="icone" aria-hidden="true"><use href="#github"/></svg></a></li>
@@ -444,7 +445,7 @@
   </footer>
 
   <button id="haut-btn" type="button" aria-label="Revenir en haut de la page"
-          class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-sky-500 text-white shadow-lg grid place-items-center hover:bg-sky-600 z-40">
+          class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-teal-600 text-white shadow-lg grid place-items-center hover:bg-teal-700 z-40">
     <svg class="icone" aria-hidden="true"><use href="#fleche-haut"/></svg>
   </button>
 
@@ -452,12 +453,12 @@
 
   <!-- ================= SCRIPTS (l'ordre compte) ================= -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/data.js?v=1"></script>        <!-- 1. le contenu -->
-  <script src="assets/js/rendu.js?v=1"></script>       <!-- 2. fabrique compétences et projets -->
-  <script src="assets/js/theme.js?v=1"></script>       <!-- 3. mode sombre -->
-  <script src="assets/js/navigation.js?v=1"></script>  <!-- 4. menu, header, retour en haut -->
-  <script src="assets/js/animations.js?v=1"></script>  <!-- 5. animations au défilement -->
-  <script src="assets/js/projets.js?v=1"></script>     <!-- 6. filtre des projets -->
-  <script src="assets/js/contact.js?v=1"></script>     <!-- 7. formulaire -->
+  <script src="assets/js/data.js?v=2"></script>        <!-- 1. le contenu -->
+  <script src="assets/js/rendu.js?v=2"></script>       <!-- 2. fabrique compétences et projets -->
+  <script src="assets/js/theme.js?v=2"></script>       <!-- 3. mode sombre -->
+  <script src="assets/js/navigation.js?v=2"></script>  <!-- 4. menu, header, retour en haut -->
+  <script src="assets/js/animations.js?v=2"></script>  <!-- 5. animations au défilement -->
+  <script src="assets/js/projets.js?v=2"></script>     <!-- 6. filtre des projets -->
+  <script src="assets/js/contact.js?v=2"></script>     <!-- 7. formulaire -->
 </body>
 </html>

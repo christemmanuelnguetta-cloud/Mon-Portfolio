@@ -33,6 +33,7 @@ body.page-cv {
   font-size: .9rem;
   border: 0;
   cursor: pointer;
+  text-decoration: none;
 }
 .cv-outils .btn-retour {
   background: #fff;
@@ -47,14 +48,14 @@ body.page-cv {
 
 /* Bouton principal de la page CV */
 .cv-outils .btn-principal {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1);
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   color: #fff;
-  box-shadow: 0 10px 25px -8px rgba(14, 165, 233, .6);
+  box-shadow: 0 10px 25px -8px rgba(13, 148, 136, .6);
   transition: transform .2s, box-shadow .2s;
 }
 .cv-outils .btn-principal:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -8px rgba(14, 165, 233, .85);
+  box-shadow: 0 14px 30px -8px rgba(13, 148, 136, .85);
 }
 .btn-retour { text-decoration: none; transition: background-color .2s; }
 
@@ -83,7 +84,7 @@ body.page-cv {
   height: 36mm;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #0ea5e9;
+  border: 3px solid #0d9488;
   display: block;
   margin: 0 auto 6mm;
 }
@@ -92,7 +93,7 @@ body.page-cv {
   font-size: 10pt;
   text-transform: uppercase;
   letter-spacing: .12em;
-  color: #0ea5e9;
+  color: #2dd4bf;
   margin: 8mm 0 3mm;
   padding-bottom: 2mm;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
@@ -108,15 +109,15 @@ body.page-cv {
 .cv-niveau { margin-bottom: 3mm; }
 .cv-niveau span { display: block; font-size: 9.5pt; margin-bottom: 1.2mm; }
 .cv-niveau div { height: 4px; background: rgba(255, 255, 255, .15); border-radius: 4px; overflow: hidden; }
-.cv-niveau i { display: block; height: 100%; background: linear-gradient(90deg, #0ea5e9, #22d3ee); }
+.cv-niveau i { display: block; height: 100%; background: linear-gradient(90deg, #2dd4bf, #f59e0b); }
 
 .cv-puces { display: flex; flex-wrap: wrap; gap: 1.5mm; }
 .cv-puces li {
   font-size: 8.5pt;
   padding: 1mm 2.5mm;
   border-radius: 999px;
-  background: rgba(14, 165, 233, .18);
-  color: #7dd3fc;
+  background: rgba(13, 148, 136, .18);
+  color: #5eead4;
   margin: 0;
 }
 
@@ -135,7 +136,7 @@ body.page-cv {
   margin: 2mm 0 0;
   font-size: 12pt;
   font-weight: 600;
-  color: #0ea5e9;
+  color: #0d9488;
 }
 
 .cv-principal h2 {
@@ -153,7 +154,7 @@ body.page-cv {
   width: 4mm;
   height: 4mm;
   border-radius: 1mm;
-  background: #0ea5e9;
+  background: #0d9488;
   flex-shrink: 0;
 }
 .cv-principal h2:first-of-type { margin-top: 0; }
@@ -170,7 +171,7 @@ body.page-cv {
   width: 2.5mm;
   height: 2.5mm;
   border-radius: 50%;
-  background: #0ea5e9;
+  background: #0d9488;
 }
 .cv-bloc::after {
   content: "";
@@ -183,7 +184,7 @@ body.page-cv {
 }
 .cv-bloc:last-child::after { display: none; }
 
-.cv-bloc .cv-date { font-size: 8.5pt; font-weight: 600; color: #0ea5e9; }
+.cv-bloc .cv-date { font-size: 8.5pt; font-weight: 600; color: #0d9488; }
 .cv-bloc h3 { margin: .5mm 0 1mm; font-size: 11pt; font-weight: 700; color: #0f172a; }
 .cv-bloc .cv-lieu { font-size: 9.5pt; font-style: italic; color: #64748b; }
 .cv-bloc ul { margin: 1.5mm 0 0; padding-left: 4mm; }
@@ -193,7 +194,7 @@ body.page-cv {
 .cv-projet { border: 1px solid #e2e8f0; border-radius: 2mm; padding: 3mm; }
 .cv-projet h3 { margin: 0 0 1mm; font-size: 10pt; color: #0f172a; }
 .cv-projet p { font-size: 8.5pt; line-height: 1.5; margin: 0 0 1.5mm; }
-.cv-projet small { font-size: 8pt; color: #0ea5e9; font-weight: 600; }
+.cv-projet small { font-size: 8pt; color: #0d9488; font-weight: 600; }
 
 /* ---------- Téléphone : une seule colonne ---------- */
 @media (max-width: 760px) {
@@ -225,4 +226,21 @@ body.page-cv {
   }
   .cv-bloc, .cv-projet { break-inside: avoid; }
   a { text-decoration: none; color: inherit; }
+
+  /* Version compacte : tout le CV tient sur une seule page A4 */
+  .feuille { height: 296mm; overflow: visible; }
+  .cv-cote { padding: 9mm 7mm; }
+  .cv-photo { width: 32mm; height: 32mm; margin-bottom: 4mm; }
+  .cv-cote h2 { margin: 5mm 0 2mm; padding-bottom: 1.5mm; font-size: 9.5pt; }
+  .cv-cote li { font-size: 9pt; line-height: 1.45; margin-bottom: 1.5mm; }
+  .cv-niveau { margin-bottom: 2.2mm; }
+  .cv-niveau span { font-size: 9pt; margin-bottom: .8mm; }
+  .cv-puces li { font-size: 8pt; padding: .7mm 2.2mm; margin: 0; }
+  .cv-principal { padding: 8mm 8mm; }
+  .cv-entete { padding-bottom: 3.5mm; margin-bottom: 4mm; }
+  .cv-entete h1 { font-size: 22pt; }
+  .cv-principal h2 { margin: 4.5mm 0 2.5mm; font-size: 10.5pt; }
+  .cv-principal p { font-size: 9.5pt; line-height: 1.5; margin-bottom: 2mm; }
+  .cv-bloc { margin-bottom: 3mm; }
+  .cv-bloc li { font-size: 9pt; line-height: 1.45; }
 }
