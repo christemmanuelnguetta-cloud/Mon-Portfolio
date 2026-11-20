@@ -24,18 +24,21 @@ Portfolio/
     │   ├── navigation.js   menu mobile, header, lien actif, retour en haut
     │   ├── animations.js   chargement, particules, frappe, apparitions
     │   ├── projets.js      filtre des projets par catégorie
-    │   ├── contact.js      validation du formulaire
-    │   └── cv.js           bouton de téléchargement du CV
+    │   └── contact.js      validation et envoi du formulaire
     ├── icons/sprite.svg    toutes les icônes du site
     ├── images/             photo de profil
-    └── docs/               cv.pdf (à générer depuis cv.html)
+    └── docs/               cv.pdf (le CV téléchargeable)
 ```
+
+Le dossier `venv/` (environnement virtuel Python) existe sur l'ordinateur
+mais n'est pas envoyé sur GitHub : voir plus bas.
 
 ## Le CV
 
-`cv.html` affiche le CV en ligne, au format d'une page A4. Le bouton
-**Télécharger en PDF** télécharge `assets/docs/cv.pdf` s'il existe, sinon il
-ouvre la fenêtre d'impression où l'on choisit « Enregistrer au format PDF ».
+`cv.html` affiche le CV en ligne, au format d'une page A4. Les boutons
+**Télécharger** téléchargent directement `assets/docs/cv.pdf`, une page A4.
+Après une modification de `cv.html`, refaire le PDF (voir
+`assets/docs/LISEZMOI.txt`).
 
 ## Le formulaire de contact
 
@@ -55,8 +58,40 @@ fonctionne définitivement.
 
 Le formulaire contient aussi un champ caché (`#site-web`) qui piège les
 robots : un visiteur ne le voit pas, un robot le remplit, et le message est
-alors ignoré. Si le réseau échoue, le site ouvre la messagerie du visiteur
-pour que le message ne soit pas perdu.
+alors ignoré. Si l'envoi échoue, un message affiche l'adresse e-mail pour
+que le visiteur puisse écrire directement.
+
+## Environnement virtuel
+
+Le site lui-même n'utilise pas Python : HTML, CSS, Tailwind et jQuery sont
+chargés directement par le navigateur. L'environnement virtuel sert à
+travailler proprement sur l'ordinateur, par exemple pour lancer un petit
+serveur local avec Python, sans toucher au Python du système.
+
+Créer l'environnement (une seule fois, dans le dossier du projet) :
+
+```
+python -m venv venv
+```
+
+L'activer dans le terminal de VS Code (PowerShell) :
+
+```
+venv\Scripts\Activate.ps1
+```
+
+Le terminal affiche alors `(venv)` au début de la ligne. Lancer le site en
+local, puis ouvrir http://localhost:8000 :
+
+```
+python -m http.server 8000
+```
+
+Pour quitter l'environnement : `deactivate`.
+
+Le dossier `venv/` est exclu de GitHub (`.gitignore`) : chaque ordinateur
+crée le sien avec la commande ci-dessus. Il n'y a aucune bibliothèque à
+installer avec `pip`, donc pas de fichier `requirements.txt`.
 
 ## Déploiement sur Vercel
 

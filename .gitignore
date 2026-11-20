@@ -6,3 +6,7 @@
 Thumbs.db
 
 .vercel
+
+# Environnement virtuel Python (propre à chaque ordinateur)
+venv/
+__pycache__/
